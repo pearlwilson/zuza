@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    
+    <category>
+    <pattern>What is *</pattern>
+    <template>Here are some information about <star/>.
+    <button>
+        <text>Click here</text>
+        <url>https://en.wikipedia.org/wiki/<star/></url>
+    </button>
+    </template>
+  </category>
+    
+  
+  	<category>
+	    <pattern>GET STARTED</pattern>
+	    <template>Awesome, let's do it.  How can I help you?<br/>
+      <reply>
+           <text>Check my risk of causing covid</text>
+           <postback>CHOOSE1</postback>
+       </reply>
+       <reply>
+           <text>Know about covid-19 symptoms</text>
+           <postback>CHOOSE2</postback>
+       </reply>
+       <reply>
+           <text>Book My Vaccine</text>
+           <postback>CHOOSE3</postback>
+       </reply>
+    </template>
+  </category>
+      
+
+  <category>
+      <pattern>CHOOSE1</pattern>
+       <template> Please answer my questions to determine your risk <br/>
+       Don't get panic everything is gonna be alright :) <br/>
+      QUESTION 1: <br/>
+      Have you traveled to a high-risk country/Indian state or been in contact with someone
+      who is ill and has traveled to a high risk country/Indian state in the last 14 days?
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO</postback>
+       </reply>
+    </template>
+  </category>
+  
+  
+ <category>
+  <pattern>CHOOSENO</pattern>
+       <template> OK <br/>
+       QUESTION 2: Have you been in close contact with a 
+       laboratory confirmed COVID-19 patient within the past 14 days? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES1</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO1</postback>
+       </reply>
+    </template>
+  </category>
+    
+  
+  <category>
+  <pattern>CHOOSEYES</pattern>
+       <template> OK, Now your score is 1.<br/>
+       After the end of the chat, if you have a score greater than 4 , 
+       you will have a great chance to get affected by Covid. <br/>
+       QUESTION 2: Have you been in close contact with a 
+       laboratory confirmed COVID-19 patient within the past 14 days? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES2</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO2</postback>
+       </reply>
+    </template>
+  </category>
+ 
+  <category>
+  <pattern>CHOOSEYES1</pattern>
+       <template> OK Your Score is 1 <br/>
+       QUESTION 3: Do You have Fever? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES3</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO3</postback>
+       </reply>
+       </template>
+ </category>
+ 
+   <category>
+  <pattern>CHOOSENO1</pattern>
+       <template> OK Your Score is Still 0 :) <br/>
+       QUESTION 3: Do You have Fever? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES4</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO4</postback>
+       </reply>
+       </template>
+ </category>
+ 
+    <category>
+  <pattern>CHOOSEYES2</pattern>
+       <template> OK Your Score is 2 <br/>
+       QUESTION 3: Do You have Fever? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES5</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO5</postback>
+       </reply>
+       </template>
+ </category>
+ 
+ 
+  <category>
+  <pattern>CHOOSENO2</pattern>
+       <template> OK Your Score is Still 1 <br/>
+       QUESTION 3: Do You have Fever? <br/>
+       <reply>
+           <text>yes</text>
+           <postback>CHOOSEYES6</postback>
+          
+       </reply>
+       <reply>
+           <text>No</text>
+           <postback>CHOOSENO6</postback>
+       </reply>
+       </template>
+ </category>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <category>
+  <pattern>CHOOSEYES5</pattern>
+       <template> OK Your Score is 3 <br/>
+       Based on the assesment, you are at risk for covid-19
+       <reply>
+           <text>Find List of nearby health centers</text>
+           <postback>HEALTHCENTER</postback>
+       </reply>
+       
+       <reply>
+           <text>CONTACT FOR ANY ASSISTANCE</text>
+           <postback>HELPLINE</postback>
+       </reply>
+       <reply>
+           <text>FAQs</text>
+           <postback>FAQ</postback>
+       </reply>
+       </template>
+ </category>
+ 
+
+  
+  <category>
+      <pattern>HEALTHCENTER</pattern>
+       <template> Please enter your city
+       </template>
+  </category>
+  
+  <category>
+        <pattern>*</pattern>
+        <template> Ok , You can click the button, to consult a doctor near you.
+    <button>
+        <text>Click here</text>
+        <url>https://www.medindia.net/patients/doctor_search/doctors-<star/>.htm</url>
+    </button>
+    </template>
+  </category>
+
+ 
+ 
+ <category>
+        <pattern>HELPLINE</pattern>
+        <template> Ok , You can click the button, to get covid helpline number.
+    <button>
+        <text>Click here</text>
+        <url>https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf</url>
+    </button>
+    </template>
+  </category>
+  
+  
+  
+  
+  
+  
+  
+  	<category>
+	    <pattern>FAQ</pattern>
+	    <template>MORE INFORMATION<br/>
+      <reply>
+           <text>How to Self quarentine</text>
+           <postback>SELFQUARENTINE</postback>
+       </reply>
+       
+       <reply>
+           <text>Do's and Don'ts</text>
+           <postback>DOSNDONTS</postback>
+       </reply>
+       
+       <reply>
+           <text>COVID19 Management Videos</text>
+           <postback>VIDEOS</postback>
+       </reply>
+       
+    </template>
+  </category>
+  
+  
+  <category>
+        <pattern>SELFQUARENTINE</pattern>
+        <template> This might help you!
+    <button>
+        <text>Click here</text>
+        <url>https://drive.google.com/file/d/16k2FiIdZS1oyNfVqiNvfa6zjjIu7E4ec/view?usp=drivesdk</url>
+    </button>
+    </template>
+  </category>
+  
+    <category>
+        <pattern>DOSNDONTS</pattern>
+        <template> This might help you!
+    <button>
+        <text>Click here</text>
+        <url>https://drive.google.com/file/d/1v8i_ZYXq62EUE-B2t49vjtz9YjTiumKq/view?usp=sharing</url>
+    </button>
+    </template>
+  </category>
+  
+  
+  <category>
+        <pattern>VIDEOS</pattern>
+        <template> This might help you!
+    <button>
+        <text>Click here</text>
+        <url> https://youtube.com/playlist?list=PL1a9DHjZmejE-Ep2PAu2OR8HBfLP0BLIk</url>
+    </button>
+    </template>
+  </category>
+
+           
+
+ <category>
+      <pattern>CHOOSE2</pattern>
+       <template>
+           <button>
+        <text>Click here to know about the symptoms of covid-19</text>
+        <url>https://www.who.int/health-topics/coronavirus#tab=tab_3</url>
+    </button>
+    </template>
+  </category>
+  
+ 
+  
+  
+  <category>
+      <pattern>CHOOSE3</pattern>
+       <template>
+           <button>
+        <text>Click here to book your vaccine</text>
+        <url>https://www.cowin.gov.in/</url>
+    </button>
+    </template>
+  </category>
+  </aiml>
+  
+ 
+
+
